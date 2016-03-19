@@ -1,0 +1,37 @@
+{
+  "name": "quickstart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack/webpack.dev.js",
+    "postinstall": "typings install",
+    "start": "webpack-dev-server --config webpack/webpack.dev.js",
+    "typings": "typings"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.11",
+    "es6-promise": "^3.1.2",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.2",
+    "zone.js": "^0.6.4"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "copy-webpack-plugin": "^1.1.1",
+    "html-webpack-plugin": "^2.10.0",
+    "lite-server": "^2.1.0",
+    "node-sass": "^3.4.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.2.0",
+    "ts-loader": "^0.8.1",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.9",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

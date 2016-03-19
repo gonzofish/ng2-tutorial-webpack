@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "removeComments": false,
+        "sourceMap": true,
+        "target": "es5"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "typings/main.d.ts",
+        "node_modules/zone.js/dist/zone.js.d.ts"
+    ]
+}
