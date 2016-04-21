@@ -5,16 +5,17 @@ const path = require('path');
 const webpack = require('webpack');
 const ChunkWebpack = webpack.optimize.CommonsChunkPlugin;
 
+const rootDir = path.resolve(__dirname, '..');
+
 module.exports = {
     debug: true,
     devServer: {
-        contentBase: path.resolve(__dirname, 'dist'),
-        open: true
+        contentBase: path.resolve(rootDir, 'dist')
     },
     devtool: 'source-map',
     entry: {
-        app: ['./src/app/scripts/bootstrap'],
-        vendor: ['./src/app/scripts/vendor']
+        app: [ path.resolve(rootDir, 'src/app/scripts/bootstrap') ],
+        vendor: [ path.resolve(rootDir, 'src/app/scripts/vendor') ]
     },
     module: {
         loaders: [
@@ -25,7 +26,7 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, '../dist')
+        path: path.resolve(rootDir, 'dist')
     },
     plugins: [
         new ChunkWebpack({
@@ -36,7 +37,7 @@ module.exports = {
         new HtmlWebpack({
             filename: 'index.html',
             inject: 'body',
-            template: './src/app/index.html'
+            template: path.resolve(rootDir, 'src/app/index.html')
         })
     ],
     resolve: {

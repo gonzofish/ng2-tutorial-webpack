@@ -1,0 +1,11 @@
+<h1>My Message List</h1>
+
+<form (submit)="addMessage()">
+    <input type="text" [(ngModel)]="newMessage" />
+
+    <button type="submit">Add Message</button>
+</form>
+
+<ul>
+    <li *ngFor="#message of messages">{{ message }}</li>
+</ul>
