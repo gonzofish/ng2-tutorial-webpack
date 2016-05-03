@@ -2,17 +2,21 @@ import {
     beforeEach,
     describe,           // `ddescribe` is also available for isolating suites of tests to run
     expect,
-    injectAsync,        // `inject` is also available for synchronous injections
+    inject,
+    AsyncTestCompleter,
     it,                 // `iit` is also available for running individual tests
     TestComponentBuilder
-} from 'angular2/testing';
+} from 'angular2/testing_internal';
 
 import { AppComponent } from '../../../app/scripts/components/app/app.component.ts';
 
 function createComponent (callback: Function) {
-    return injectAsync([TestComponentBuilder], (testComponentBuilder: TestComponentBuilder) => {
+    return inject([TestComponentBuilder, AsyncTestCompleter], (testComponentBuilder: TestComponentBuilder, async: AsyncTestCompleter) => {
         return testComponentBuilder.createAsync(AppComponent)
-            .then(fixture => callback(fixture.componentInstance));
+            .then(fixture => {
+                callback(fixture.componentInstance);
+                async.done();
+            });
     });
 }
 
