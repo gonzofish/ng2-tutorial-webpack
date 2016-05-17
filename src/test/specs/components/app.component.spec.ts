@@ -2,10 +2,10 @@ import {
     beforeEach,
     describe,           // `ddescribe` is also available for isolating suites of tests to run
     expect,
-    inject,        // `inject` is also available for synchronous injections
-    it                 // `iit` is also available for running individual tests
+    inject,             // `inject` is also available for synchronous injections
+    it                  // `iit` is also available for running individual tests
 } from '@angular/core/testing';
-import { TestComponentBuilder } from '@angular/compiler/testing';
+import { TestComponentBuilder } from '@angular/compiler/testing';1
 
 import { AppComponent } from '../../../app/scripts/components/app/app.component.ts';
 
